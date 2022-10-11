@@ -163,7 +163,7 @@ console.log('All the vegetarian food', vegetarianFood)
 function problemTwo(){
     
     let results;
-    desiredDish = prompt('What is your desired dish?')
+    let desiredDish = prompt('What is your desired dish?')
     results = dishes.filter(function(element){
         if(element.cuisine === desiredDish){
             return true;
@@ -251,9 +251,9 @@ function problemSix(){
     
     let results;
     results = dishes.filter(function(element){
-        results = element.ingredients.includes('chickpea');
+        dishToFilter = element.ingredients.includes('chickpea');
 
-        return results;
+        return dishToFilter;
     })
 
     return results;
@@ -265,7 +265,21 @@ console.log('Foods with an chickpeas as an ingredient', chickpeaIngedient);
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
+function problemSeven(){
+    
+    let results;
+    let includedIngridient = prompt('What ingredient would you like to be included?');
+    results = dishes.filter(function(element){
+        isAnIngredient = element.ingredients.includes(includedIngridient);
 
+        return isAnIngredient;        
+    })
+
+    return results;
+}
+
+let userExculdedDishes= problemSeven();
+console.log('Foods with a certain ingredient', userExculdedDishes);
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map

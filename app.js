@@ -251,18 +251,15 @@ function problemSix(){
     
     let results;
     results = dishes.filter(function(element){
-        if(element.servings % 2 === 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        results = element.ingredients.includes('chickpea');
+
+        return results;
     })
 
     return results;
 }
 
-let chickpeaIngedient= problemFive();
+let chickpeaIngedient= problemSix();
 console.log('Foods with an chickpeas as an ingredient', chickpeaIngedient);
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
